@@ -11,9 +11,8 @@ namespace CapitalPlacementAPI.Controllers
     {
         private readonly ILogger<ApplicationFormController> _logger;
         private readonly IApplicationFormService _applicationFormService;
-        public ApplicationFormController(ILogger<ApplicationFormController> logger, IApplicationFormService applicationFormService)
-        {
-            _logger = logger;
+        public ApplicationFormController(IApplicationFormService applicationFormService)
+        {            
             _applicationFormService = applicationFormService;
         }
 

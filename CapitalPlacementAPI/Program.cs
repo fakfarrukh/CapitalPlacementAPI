@@ -1,13 +1,15 @@
+using CapitalPlacementAPI.Controllers;
 using CapitalPlacementAPI.Database;
 using CapitalPlacementAPI.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IApplicationFormDatabase, ApplicationFormDatabase>();
+builder.Services.AddScoped<IApplicationFormService, ApplicationFormService>();
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<IApplicationFormService,ApplicationFormService>();
-builder.Services.AddScoped<IApplicationFormDatabase, ApplicationFormDatabase>();
+
 
 var app = builder.Build();
 
